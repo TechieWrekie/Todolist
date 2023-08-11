@@ -3,6 +3,10 @@ const getAndUpdate = () => {
   console.log("Get and Update is called")
   let usertitle = document.getElementById("title").value;
   let userdesc = document.getElementById("desc").value;
+  if (!usertitle || !userdesc) {
+    alert("Title and description cannot be empty");
+    return; 
+  }
   if (localStorage.getItem('itemsJson') == null) {
     itemsJsonArray = [];
     itemsJsonArray.push([usertitle, userdesc])
